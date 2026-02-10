@@ -5,15 +5,15 @@ const usernameInput = document.getElementById("username");
     const existingBtn = document.getElementById("existing");
     const form = document.getElementById("loginForm");
 
-    // ✅ Show existing user button if credentials exist
+    // Check localStorage on page load
     const savedUsername = localStorage.getItem("username");
     const savedPassword = localStorage.getItem("password");
 
     if (savedUsername && savedPassword) {
-      existingBtn.style.display = "block";
+      existingBtn.style.display = "inline-block";
     }
 
-    // ✅ Form submission
+    // Form submit
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -25,7 +25,7 @@ const usernameInput = document.getElementById("username");
       if (checkbox.checked) {
         localStorage.setItem("username", username);
         localStorage.setItem("password", password);
-        existingBtn.style.display = "block";
+        existingBtn.style.display = "inline-block";
       } else {
         localStorage.removeItem("username");
         localStorage.removeItem("password");
@@ -33,7 +33,7 @@ const usernameInput = document.getElementById("username");
       }
     });
 
-    // ✅ Login as existing user
+    // Existing user login
     existingBtn.addEventListener("click", function () {
       const savedUser = localStorage.getItem("username");
       alert(`Logged in as ${savedUser}`);
