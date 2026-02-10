@@ -1,4 +1,4 @@
-//your JS code here. If required.
+//your JS code here. If requirhttps://www.svgrepo.com/show/345221/three-dots.svged.
 const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
     const checkbox = document.getElementById("checkbox");
